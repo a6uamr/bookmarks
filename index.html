@@ -2,18 +2,24 @@
 <html lang="en">
   <head>
     <title>Bookmarks</title>
+    <link rel="icon" type="image/x-icon" href="950788.png">
     <meta name="viewport" content="width=device-width">
     <script src="https://kit.fontawesome.com/ea60552df8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
       body {font-family: Montserrat;}
       h1, #a {font-family: Pacifico;}
+      h1 {color: #007bff;}
+      @keyframes c {33.33% {color: #dc3545;} 66.67% {color: #17a2b8;}}
+      h1:hover {animation: c 3s ease-in-out infinite;}
       #a {font-size: 1.2rem;}
-      dialog {border: 0; outline: 0;}
-      dialog button {background: 0; border: 0; float: right;}
+      dialog {padding-right: 2rem; border: 0; outline: 0; border-radius: .5rem;}
+      dialog button {background: 0; border: 0;
+        position: absolute; top: .2rem; right: .2rem;}
       dialog button:focus {outline: 0;}
-      dialog li {margin: 10px 25px;}
+      dialog p {font-weight: 600;}
+      dialog li {margin-bottom: .6rem;}
     </style>
   </head>
   <body class="container my-3">
@@ -21,32 +27,39 @@
     <form class="mb-5">
       <label class="d-block">
         <i class="fas fa-book-bookmark pl-1"></i> Name
-        <input placeholder="e.g. Google" id="n" class="form-control my-1">
+        <input placeholder="e.g. Google" id="n" class="form-control mt-1">
       </label>
       <label class="d-block">
         <i class="fas fa-link pl-1"></i> URL
         <input type="url" placeholder="e.g. google.com"
-          id="l"  class="form-control my-1">
+          id="l" class="form-control mt-1">
       </label>
-      <button type="button" id="a" onclick="A();" class="btn btn-primary w-100 mt-2">
+      <button type="button" id="a" onclick="A();"
+        class="btn btn-primary w-100 mt-2">
         Bookmark
       </button>
     </form>
-    <dialog id="d">
-      <button type="button" onclick="d.close();">
+    <dialog id="R">
+      <button type="button" onclick="R.close();">
         <i class="fas fa-xmark"></i>
       </button>
+      <p>Site Name or URL is not valid. Please follow the rules below:</p>
       <ul class="fa-ul">
-        Site Name or URL is not valid. Please follow the rules below:
         <li>
           <span class="fa-li"><i class="far fa-circle-right"></i></span>
-          Site name must contain at least 3 characters.
+          Site name must contain at least 3 characters. 
         </li>
         <li>
           <span class="fa-li"><i class="far fa-circle-right"></i></span>
           Site URL must be a valid one.
         </li>
       </ul>
+    </dialog>
+    <dialog id="r">
+      <button type="button" onclick="r.close();">
+        <i class="fas fa-xmark"></i>
+      </button>
+      Name already exists. Try another.
     </dialog>
     <input type="search" placeholder="Search bookmarks"
       id="s" oninput="T(s.value);" class="form-control mb-1">
@@ -56,7 +69,7 @@
           <th>#</th><th>Name</th><th>Visit</th><th>Edit</th><th>Delete</th>
         </tr>
       </thead>
-      <tbody id="t"></tbody>
+      <tbody></tbody>
     </table>
     <script src="script.js"></script>
   </body>
