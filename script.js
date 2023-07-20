@@ -4,7 +4,6 @@ const n=document.getElementById('n'), N=/^\w{3}([ \w]*\w)*$/,
   r=document.getElementById('r'), s=document.getElementById('s'),
   t=document.querySelector('tbody');
 let B=[], I=0;
-function m(){}
 function T(s){let T='',i=0; while(i<B.length){if(!s ||
   B[i].n.toLowerCase().includes(s.toLowerCase())) T+=`<tr><td>${i+1}</td>
   <td>${B[i].n}</td><td><a href=${B[i].l} target="_blank">
