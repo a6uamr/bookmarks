@@ -12,7 +12,7 @@ function T(s){let T='',i=0; while(i<B.length){if(!s ||
   onclick="D(${i});" class="btn btn-outline-danger"><i class="fas fa-trash-can">
   </i> Delete</button></td></tr>`; i++;} t.innerHTML=T;}
 function b(){localStorage.setItem('B',JSON.stringify(B));}
-function A(){if(!(/^\w{3,}$/.test(n.value) && /^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i
+function A(){if(!(/^\w{3}([ \w]*\w)*$/.test(n.value) && /^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i
   .test(l.value))) {R.showModal(); return;} for(let i=0;i<B.length;i++)
   {if(i==I) continue; if(n.value==B[i].n){r.showModal(); return;}}
   if(!/^https?:\/\//i.test(l.value)) l.value='https://'+l.value;
