@@ -29,12 +29,13 @@
     <form class="mb-5">
       <label class="d-block">
         <i class="fas fa-book-bookmark pl-1"></i> Name
-        <input placeholder="e.g. Google" id="n" class="form-control mt-1">
+        <input placeholder="e.g. Google" id="n"
+        oninput="v(N,n);" class="form-control mt-1">
       </label>
       <label class="d-block">
         <i class="fas fa-link pl-1"></i> URL
-        <input type="url" placeholder="e.g. google.com"
-          id="l" class="form-control mt-1">
+        <input type="url" placeholder="e.g. google.com" id="l"
+        oninput="v(L,l);"  class="form-control mt-1">
       </label>
       <button type="button" id="a" onclick="A();"
         class="btn btn-primary w-100 mt-2">
