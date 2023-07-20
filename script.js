@@ -4,6 +4,7 @@ const n=document.getElementById('n'), N=/^\w{3}([ \w]*\w)*$/,
   r=document.getElementById('r'), s=document.getElementById('s'),
   t=document.querySelector('tbody');
 let B=[], I=0;
+function m(){}
 function T(s){let T='',i=0; while(i<B.length){if(!s ||
   B[i].n.toLowerCase().includes(s.toLowerCase())) T+=`<tr><td>${i+1}</td>
   <td>${B[i].n}</td><td><a href=${B[i].l} target="_blank">
@@ -22,6 +23,6 @@ function A(){if(!(N.test(n.value) && L.test(l.value))) {R.showModal(); return;}
   +l.value; a.innerHTML='Bookmark'; B.splice(I,1,{n:n.value,l:l.value});
   n.value=''; l.value=''; rv(n); rv(l); s.value=''; T(); b(); I=B.length;}
 function D(i){B.splice(i,1); T(s.value); a.innerHTML='Bookmark'; b(); I=B.length;}
-function E(i){n.value=B[i].n; l.value=B[i].l; a.innerHTML='Save'; I=i;}  
+function E(i){n.value=B[i].n; l.value=B[i].l; a.innerHTML='Save'; I=i;}
 if(localStorage.getItem('B')!=null)
   {B=JSON.parse(localStorage.getItem('B')); T(); I=B.length;}
