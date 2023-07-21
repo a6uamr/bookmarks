@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
-      body {background: #fafafa; font-family: Montserrat;}
+      body {background: #fafafa; font-family: Montserrat;
+        min-height: 100vh; display: flex;}
+      .container {padding: 15px; margin: auto;}
       @media screen and (max-width: 767px) {.container {max-width: none;}}
       h1, #a {font-family: Pacifico;}
       h1 {color: #007bff;}
@@ -23,58 +25,60 @@
       .table td {vertical-align: middle;}
     </style>
   </head>
-  <body class="container my-3">
-    <h1 class="text-center mb-5">Bookmark Your Favorite Sites</h1>
-    <form class="mb-5">
-      <label class="d-block">
-        <i class="fas fa-book-bookmark pl-1"></i> Name
-        <input placeholder="e.g. Google" id="n"
-        oninput="v(N,n);" class="form-control mt-1">
-      </label>
-      <label class="d-block">
-        <i class="fas fa-link pl-1"></i> URL
-        <input type="url" placeholder="e.g. google.com" id="l"
-        oninput="v(L,l);"  class="form-control mt-1">
-      </label>
-      <button type="button" id="a" onclick="A();"
-        class="btn btn-primary w-100 mt-2">
-        Bookmark
-      </button>
-    </form>
-    <dialog id="R">
-      <button type="button" onclick="R.close();">
-        <i class="fas fa-xmark"></i>
-      </button>
-      <p>Site Name or URL is not valid. Please follow the rules below:</p>
-      <ul class="fa-ul">
-        <li>
-          <span class="fa-li"><i class="far fa-circle-right"></i></span>
-          Site name must contain at least 3 characters. 
-        </li>
-        <li>
-          <span class="fa-li"><i class="far fa-circle-right"></i></span>
-          Site URL must be a valid one.
-        </li>
-      </ul>
-    </dialog>
-    <dialog id="r">
-      <button type="button" onclick="r.close();">
-        <i class="fas fa-xmark"></i>
-      </button>
-      Name already exists. Try another.
-    </dialog>
-    <input type="search" placeholder="Search bookmarks"
-      id="s" oninput="T(s.value);" class="form-control mb-1">
-    <div>
-      <table class="table table-striped table-borderless text-center">
-        <thead>
-          <tr>
-            <th>#</th><th>Site</th><th>Visit</th><th>Edit</th><th>Delete</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>  
-    </div>
+  <body>
+    <main class="container">
+      <h1 class="text-center mb-5">Bookmark Your Favorite Sites</h1>
+      <form class="mb-5">
+        <label class="d-block">
+          <i class="fas fa-book-bookmark pl-1"></i> Name
+          <input placeholder="e.g. Google" id="n"
+          oninput="v(N,n);" class="form-control mt-1">
+        </label>
+        <label class="d-block">
+          <i class="fas fa-link pl-1"></i> URL
+          <input type="url" placeholder="e.g. google.com" id="l"
+          oninput="v(L,l);"  class="form-control mt-1">
+        </label>
+        <button type="button" id="a" onclick="A();"
+          class="btn btn-primary w-100 mt-2">
+          Bookmark
+        </button>
+      </form>
+      <dialog id="R">
+        <button type="button" onclick="R.close();">
+          <i class="fas fa-xmark"></i>
+        </button>
+        <p>Site Name or URL is not valid. Please follow the rules below:</p>
+        <ul class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="far fa-circle-right"></i></span>
+            Site name must contain at least 3 characters. 
+          </li>
+          <li>
+            <span class="fa-li"><i class="far fa-circle-right"></i></span>
+            Site URL must be a valid one.
+          </li>
+        </ul>
+      </dialog>
+      <dialog id="r">
+        <button type="button" onclick="r.close();">
+          <i class="fas fa-xmark"></i>
+        </button>
+        Name already exists. Try another.
+      </dialog>
+      <input type="search" placeholder="Search bookmarks"
+        id="s" oninput="T(s.value);" class="form-control mb-1">
+      <div>
+        <table class="table table-striped table-borderless text-center">
+          <thead>
+            <tr>
+              <th>#</th><th>Site</th><th>Visit</th><th>Edit</th><th>Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>  
+      </div>  
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
